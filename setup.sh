@@ -21,7 +21,9 @@ sudo -E sh -c 'echo "export GOPROXY=https://goproxy.cn,direct" >> /etc/profile'
 sudo -E sh -c 'echo "export PATH=\$PATH:\$GOROOT/bin" >> /etc/profile'
 sudo -E sh -c 'echo "export PATH=\$PATH:\$GOBIN" >> /etc/profile'
 
-# 安装dk11
-sudo -E apt install -y openjdk-11-jdk
-
+# 安装dk17
+sudo -E apt install -y openjdk-17-jdk
+# 设置java环境变量
+sudo -E sh -c 'echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> /etc/profile'
+sudo -E sh -c 'echo "export PATH=$JAVA_HOME/bin:$PATH" >> /etc/profile'
 echo "安装完毕！"
