@@ -26,4 +26,10 @@ sudo -E apt install -y openjdk-17-jdk
 # 设置java环境变量
 sudo -E sh -c 'echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> /etc/profile'
 sudo -E sh -c 'echo "export PATH=$JAVA_HOME/bin:$PATH" >> /etc/profile'
+# 安装maven
+wget https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
+sudo -E tar -zxvf apache-maven-3.8.8-bin.tar.gz -C /usr/local/
+sudo -E sh -c 'echo "export MAVEN_HOME=/usr/local/apache-maven-3.8.8" >> /etc/profile'
+sudo -E sh -c 'echo "export PATH=$MAVEN_HOME/bin:$PATH" >> /etc/profile'
+
 echo "安装完毕！"
